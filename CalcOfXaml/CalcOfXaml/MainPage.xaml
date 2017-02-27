@@ -4,8 +4,88 @@
              xmlns:local="clr-namespace:CalcOfXaml"
              x:Class="CalcOfXaml.MainPage">
 
-  <Label Text="Welcome to Xamarin Forms!"
-           VerticalOptions="Center"
-           HorizontalOptions="Center" />
+  <ContentPage.Content>
+    <Grid Padding="5,0" RowSpacing="1" ColumnSpacing="1" BackgroundColor="White">
 
+      <Grid.RowDefinitions>
+        <RowDefinition Height="2*"/>
+        <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
+      </Grid.RowDefinitions>
+
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+
+      <Label x:Name="calcText" Grid.ColumnSpan="4"
+					FontAttributes="Bold" FontSize="48"
+             BackgroundColor="Navy" Text="0"
+             TextColor="White"
+					HorizontalTextAlignment="Start" VerticalTextAlignment="Start" LineBreakMode="NoWrap" />
+
+      <Button Grid.Column="0" Grid.Row="1"
+					Clicked="SelectNu"m=""
+					BackgroundColor="Navy" TextColor="White" Text="7" FontSize="40" BorderRadius="0" />
+      <Button Grid.Column="1" Grid.Row="1"
+					Clicked="SelectNum"
+					BackgroundColor="Navy" TextColor="White" Text="8" FontSize="40" BorderRadius="0" />
+      <Button Grid.Column="2" Grid.Row="1"
+					Clicked="SelectNum"
+					BackgroundColor="Navy" TextColor="White" Text="9" FontSize="40" BorderRadius="0" />
+      <Button Grid.Column="3" Grid.Row="1"
+					Clicked="SelectOp"
+					BackgroundColor="Navy" TextColor="White" Text="/" FontSize="40" BorderRadius="0" />
+
+
+      <Button Grid.Column="0" Grid.Row="2"
+					Clicked="SelectNum"
+					BackgroundColor="Navy" TextColor="White" Text="4" FontSize="40" BorderRadius="0" />
+      <Button Grid.Column="1" Grid.Row="2"
+					Clicked="SelectNum"
+					BackgroundColor="Navy" TextColor="White" Text="5" FontSize="40" BorderRadius="0" />
+      <Button Grid.Column="2" Grid.Row="2"
+					Clicked="SelectNum"
+					BackgroundColor="Navy" TextColor="White" Text="6" FontSize="40" BorderRadius="0" />
+      <Button Grid.Column="3" Grid.Row="2"
+					Clicked="SelectOp"
+					BackgroundColor="Navy" TextColor="White" Text="X" FontSize="40" BorderRadius="0" />
+
+
+      <Button Grid.Column="0" Grid.Row="3"
+					Clicked="SelectNum"
+					BackgroundColor="Navy" TextColor="White" Text="1" FontSize="40" BorderRadius="0" />
+      <Button Grid.Column="1" Grid.Row="3"
+					Clicked="SelectNum"
+					BackgroundColor="Navy" TextColor="White" Text="2" FontSize="40" BorderRadius="0" />
+      <Button Grid.Column="2" Grid.Row="3"
+					Clicked="SelectNum"
+					BackgroundColor="Navy" TextColor="White" Text="3" FontSize="40" BorderRadius="0" />
+      <Button Grid.Column="3" Grid.Row="3"
+					Clicked="SelectOp"
+					BackgroundColor="Navy" TextColor="White" Text="-" FontSize="40" BorderRadius="0" />
+
+
+      <Button Grid.ColumnSpan="3" Grid.Column="0" Grid.Row="4"
+					Clicked="SelectNum"
+					BackgroundColor="Navy" TextColor="White" Text="0" FontSize="40" BorderRadius="0" />
+      <Button Grid.Column="3" Grid.Row="4"
+					Clicked="SelectOp"
+					BackgroundColor="Navy" TextColor="White" Text="+" FontSize="40" BorderRadius="0" />
+
+
+      <Button Grid.Column="0" Grid.Row="5"
+					Clicked="SelectClear"
+					BackgroundColor="Olive" TextColor="Navy" Text="C" FontSize="40" BorderRadius="0" />
+      <Button Grid.ColumnSpan="3" Grid.Column="1" Grid.Row="5"
+					Clicked="SelectCalc"
+					BackgroundColor="Navy" TextColor="White" Text="=" FontSize="40" BorderRadius="0"/>
+
+    </Grid>
+  </ContentPage.Content>
 </ContentPage>
