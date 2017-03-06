@@ -7,12 +7,15 @@
 
   <ContentPage.Resources>
     <ResourceDictionary>
-
+      <!--base style-->
       <Style x:Key="baseCalctext" TargetType="Label">
         <Setter Property="FontSize" Value="48" />
         <Setter Property="HorizontalTextAlignment" Value="Start"/>
         <Setter Property="VerticalTextAlignment"   Value="Start"/>
         <Setter Property="LineBreakMode"   Value="NoWrap"/>
+        <Setter Property="TextColor" Value="Black"/>
+        
+        <!--Base Text Wont remain black?-->
       </Style>
       
       
@@ -28,6 +31,7 @@
       BasedOn="{StaticResource baseCalctext}">
       <Setter Property="TextColor" Value="Green" />
       <Setter Property="FontAttributes" Value="Italic" />
+       
 
       </Style>
         
@@ -66,10 +70,12 @@
     </ResourceDictionary>
   </ContentPage.Resources>
   <ContentPage.Content>
-    <Grid Padding="5,0" RowSpacing="1" ColumnSpacing="1" BackgroundColor="White">
+  <Grid Padding="5,0" RowSpacing="1" ColumnSpacing="1" BackgroundColor="White">
 
       <Grid.RowDefinitions>
         <RowDefinition Height="2*"/>
+        <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
         <RowDefinition Height="*" />
         <RowDefinition Height="*" />
         <RowDefinition Height="*" />
@@ -85,9 +91,7 @@
       </Grid.ColumnDefinitions>
 
       <Label x:Name="calcText" Grid.ColumnSpan="4"
-					FontAttributes="Bold" FontSize="48"
-             BackgroundColor="Navy" Text="0"
-             TextColor="{DynamicResource baseStyle} "
+             Style="{DynamicResource Calctext}"
 					/>
 
       <Button Grid.Column="0" Grid.Row="1"
@@ -146,22 +150,22 @@
       <Button Grid.ColumnSpan="3" Grid.Column="1" Grid.Row="5"
 					Clicked="SelectCalc"
 					BackgroundColor="Navy" TextColor="White" Text="=" FontSize="40" BorderRadius="0"/>
-
-    </Grid>
-
-    <StackLayout>
-
-
-  
-      <Button Text=" Switch to Style #1 "
-        BackgroundColor="Navy" TextColor="White" FontSize="40" BorderRadius="0"
+    
+    
+    
+    <Button 
+      Text="Style #1 "
+             Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2"
+      BackgroundColor="Navy" TextColor="White" FontSize="40" BorderRadius="0"
 Clicked="OnButton1Clicked" />
-      <Button Text=" Switch to Style #2 "
-      BackgroundColor="Navy" TextColor="White"  FontSize="40" BorderRadius="0"
-      Clicked="OnButton2Clicked" />
-      <Button Text=" Reset "
-      BackgroundColor="Navy" TextColor="White"  FontSize="40" BorderRadius="0"
-      Clicked="OnResetButtonClicked" />
-    </StackLayout>
+    <Button Grid.Column="2" Grid.Row="6" Grid.ColumnSpan="2"
+      Text="Style #2"
+    BackgroundColor="Navy" TextColor="White"  FontSize="40" BorderRadius="0"
+    Clicked="OnButton2Clicked" />
+    <Button Text=" Reset " Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="4"
+    BackgroundColor="Navy" TextColor="White"  FontSize="40" BorderRadius="0"
+    Clicked="OnResetButtonClicked" />
+    </Grid>
+    
   </ContentPage.Content>
 </ContentPage>

@@ -100,7 +100,7 @@ namespace CalcOfXaml
         //basic logic, done for completion's sake. 
         void OnButton1Clicked(object sender, EventArgs args)
         {
-            Resources["CalcText"] = Resources["Calctext1"];
+            Resources["Calctext"] = Resources["Calctext1"];
         }
         void OnButton2Clicked(object sender, EventArgs args)
         {
