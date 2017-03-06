@@ -4,6 +4,67 @@
              xmlns:local="clr-namespace:CalcOfXaml"
              x:Class="CalcOfXaml.MainPage">
 
+
+  <ContentPage.Resources>
+    <ResourceDictionary>
+
+      <Style x:Key="baseCalctext" TargetType="Label">
+        <Setter Property="FontSize" Value="48" />
+        <Setter Property="HorizontalTextAlignment" Value="Start"/>
+        <Setter Property="VerticalTextAlignment"   Value="Start"/>
+        <Setter Property="LineBreakMode"   Value="NoWrap"/>
+      </Style>
+      
+      
+      <!--Variant Styles-->
+      <Style x:Key="Calctext1" TargetType="Label"
+      BasedOn="{StaticResource baseCalctext}">
+        <Setter Property="TextColor" Value="Purple" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        
+
+      </Style>
+      <Style x:Key="Calctext2" TargetType="Label"
+      BasedOn="{StaticResource baseCalctext}">
+      <Setter Property="TextColor" Value="Green" />
+      <Setter Property="FontAttributes" Value="Italic" />
+
+      </Style>
+        
+      <!--//First Attempt at Style. Was going to go for a incrementing button loop-->
+      
+      <!--// First Style
+      <Style x:Key ="baseStyle0"
+             TargetType="Text"
+             BasedOn="{StaticResource baseStyle}"
+             
+             
+             
+             >
+        
+        
+      </Style>
+//Second Style
+      <Style x:Key ="baseStyle1"
+           TargetType="Text"
+           BasedOn="{StaticResource baseStyle}"
+             >
+
+
+      </Style>
+      //Third Style
+
+      <Style x:Key ="baseStyle0"
+             TargetType="Text"
+             BasedOn="{StaticResource baseStyle}"
+             >
+
+
+      </Style>-->
+      
+      
+    </ResourceDictionary>
+  </ContentPage.Resources>
   <ContentPage.Content>
     <Grid Padding="5,0" RowSpacing="1" ColumnSpacing="1" BackgroundColor="White">
 
@@ -26,11 +87,11 @@
       <Label x:Name="calcText" Grid.ColumnSpan="4"
 					FontAttributes="Bold" FontSize="48"
              BackgroundColor="Navy" Text="0"
-             TextColor="White"
-					HorizontalTextAlignment="Start" VerticalTextAlignment="Start" LineBreakMode="NoWrap" />
+             TextColor="{DynamicResource baseStyle} "
+					/>
 
       <Button Grid.Column="0" Grid.Row="1"
-					Clicked="SelectNu"m=""
+					Clicked="SelectNum"
 					BackgroundColor="Navy" TextColor="White" Text="7" FontSize="40" BorderRadius="0" />
       <Button Grid.Column="1" Grid.Row="1"
 					Clicked="SelectNum"
@@ -87,5 +148,20 @@
 					BackgroundColor="Navy" TextColor="White" Text="=" FontSize="40" BorderRadius="0"/>
 
     </Grid>
+
+    <StackLayout>
+
+
+  
+      <Button Text=" Switch to Style #1 "
+        BackgroundColor="Navy" TextColor="White" FontSize="40" BorderRadius="0"
+Clicked="OnButton1Clicked" />
+      <Button Text=" Switch to Style #2 "
+      BackgroundColor="Navy" TextColor="White"  FontSize="40" BorderRadius="0"
+      Clicked="OnButton2Clicked" />
+      <Button Text=" Reset "
+      BackgroundColor="Navy" TextColor="White"  FontSize="40" BorderRadius="0"
+      Clicked="OnResetButtonClicked" />
+    </StackLayout>
   </ContentPage.Content>
 </ContentPage>

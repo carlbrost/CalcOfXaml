@@ -66,6 +66,8 @@ namespace CalcOfXaml
             this.calcText.Text = "0";
         }
 
+
+        /// Operator input and output
         void SelectCalc(object sender, EventArgs e)
         {
             if (currentState == 2)
@@ -94,5 +96,42 @@ namespace CalcOfXaml
                 currentState = -1;
             }
         }
+
+        //basic logic, done for completion's sake. 
+        void OnButton1Clicked(object sender, EventArgs args)
+        {
+            Resources["CalcText"] = Resources["Calctext1"];
+        }
+        void OnButton2Clicked(object sender, EventArgs args)
+        {
+            Resources["Calctext"] = Resources["Calctext2"];
+        }
+
+        void OnResetButtonClicked(object sender, EventArgs args)
+        {
+            Resources["Calctext"] = null;
+        }
+
+        ///// Button Logic/Loop. Was going to use a single button to increment through the styles. 
+        //private int num = 0;
+        //void OnButtonClicked(object sender, EventArgs e)
+        //{
+
+        //    if (num < 2)
+        //    {
+        //        num++;
+
+        //    }
+        //    else
+        //    {
+        //        num = 0;
+        //    }
+        //    int
+        //    Resources.[baseStyle]
+
+        //}
+
+
+
     }
 }
