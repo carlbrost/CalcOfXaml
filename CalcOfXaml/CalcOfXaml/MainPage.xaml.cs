@@ -71,7 +71,7 @@ namespace CalcOfXaml
         void SelectCalc(object sender, EventArgs e)
         {
             if (currentState == 2)
-            {
+            {  
                 double result = 0;
                 switch (mathOperator)
                 {

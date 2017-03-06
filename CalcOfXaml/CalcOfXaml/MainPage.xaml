@@ -79,8 +79,7 @@
         <RowDefinition Height="*" />
         <RowDefinition Height="*" />
         <RowDefinition Height="*" />
-        <RowDefinition Height="*" />
-        <RowDefinition Height="*" />
+         5435
       </Grid.RowDefinitions>
 
       <Grid.ColumnDefinitions>
